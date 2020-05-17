@@ -5891,7 +5891,7 @@ function copyTempDouble(ptr) {
         case 8:
           return -ERRNO_CODES.EINVAL; // These are for sockets. We don't have them fully implemented yet.
         case 9:
-          // musl trusts getown return values, due to a bug where they must be, as they overlap with errors. just return -1 here, so fnctl() returns that, and we set errno ourselves.
+          // musl trusts getown return values, due to a bug where they must be, as they overlap with errors. just return -1 here, so fcntl() returns that, and we set errno ourselves.
           ___setErrNo(ERRNO_CODES.EINVAL);
           return -1;
         default: {
